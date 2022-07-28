@@ -1,0 +1,300 @@
+.ant-modal-title {
+  text-align: center;
+  font-size: 26px;
+}
+
+.ant-tooltip-inner {
+  color: #000;
+  font-weight: 500;
+}
+
+.container-wrapper {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  height: auto;
+  position: relative;
+}
+
+.container-bg {
+  pointer-events: none;
+}
+
+.container .modal-btn-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.container .modal-btn-container > .title {
+  text-align: center;
+  background-color: #314bcb;
+  font-weight: 700;
+  font-size: 2.2vmin;
+  color: #fff;
+  padding: 1px 5px;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+.container button.modal-btn {
+  background-color: #34c8fa;
+  white-space: nowrap;
+  font-size: 1.8vmin;
+  width: auto;
+  height: 4vmin;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+.container button.modal-btn:empty {
+  display: none;
+}
+
+.container button.modal-btn.knv {
+  background-color: red;
+}
+
+.modal-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 30px;
+}
+
+.modal-head > * {
+  flex: 1;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-head .room-temprature-wrapper {
+  text-align: center;
+  align-items: center;
+}
+
+.modal-head .power-btn-wrapper {
+  align-items: flex-end;
+}
+
+.modal-content {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: row;
+  min-height: 208px;
+}
+
+.modal-content > div {
+  flex: 1;
+  border-right: solid 1px #ececec;
+}
+
+.modal-content > div:last-child {
+  border: none;
+}
+
+.modal-content > div.left {
+  display: flex;
+  flex-direction: row;
+}
+
+.modes {
+  margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.modes .mode-item {
+  width: 40px;
+  height: 40px;
+  background-color: #ddd;
+  margin-bottom: 4px;
+}
+
+.modes .mode-item.active {
+  background-color: #34c8fa;
+}
+
+.modes .mode-item:last-child {
+  margin-bottom: 0;
+}
+
+.modes .mode-item:first-child {
+}
+
+.mode-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-content .arrow {
+  width: 25px;
+}
+
+.modal-content > div.left .mode-controls .auto-status {
+  font-size: 38px;
+  color: #6ec519;
+  font-weight: 600;
+}
+
+.modal-content > div.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content > div.center > img {
+  width: 70px;
+}
+
+.modal-content > div.right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.modal-content > div.right > .temprature-set {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content > div.right > .temprature-set .temprature-set-item {
+  width: 50px;
+  flex: 1;
+  margin-bottom: 2px;
+  background-color: lightgrey;
+  line-height: 14px;
+}
+
+.modal-content > div.right > .temprature-set .temprature-set-item:last-child {
+  margin-bottom: 0;
+  border-bottom-left-radius: 25px;
+}
+
+.modal-content > div.right > .temprature-set .temprature-set-item:first-child {
+  border-top-left-radius: 25px;
+}
+
+.modal-content > div.right > .temprature-set .temprature-set-item.active {
+  background-color: #34c7f9;
+}
+
+.modal-content > div.right > .temprature-set-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-right: 10px;
+}
+
+.modal-content > div.right > .temprature-set-controls .temprature-set-status {
+  font-size: 22px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 25px;
+}
+
+.modal-footer .right select {
+  padding: 10px;
+}
+
+.leakage-img {
+  width: 100%;
+}
+
+.ant-table-cell {
+  text-align: center;
+}
+
+.program {
+  margin-bottom: 40px;
+}
+
+.wshp-list li {
+  display: flex;
+  padding-bottom: 4px;
+}
+
+.wshp-list li .ant-tag {
+  min-width: 110px !important;
+  text-align: center;
+}
+
+.page-area {
+  display: flex;
+  flex: 1 1;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.multi-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.temprature-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.fan-speed-controller-wrapper {
+  /* padding: 5px; */
+  margin-bottom: 20px;
+}
+
+.fan-speed-slider {
+  padding: 0 10px;
+}
+
+.logo {
+  width: 200px;
+}
+
+.logo-wrapper {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.modal_list_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.main_thermostat {
+  padding: 10px !important;
+  background-color: rgb(86, 85, 131) !important;
+  border-width: 2px;
+}
+
+.air_temp_container{
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0
+}
+
+.air_temp{
+  display: inline-flex
+}

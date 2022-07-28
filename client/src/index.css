@@ -1,0 +1,225 @@
+:root {
+  --zoom-color: #c7c9a5;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* display: flex; */
+  /* align-items: center; */
+  justify-content: center;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+}
+
+.mantine-Modal-body {
+  word-break: inherit !important;
+}
+
+.menu {
+  width: 80px;
+  flex-shrink: 0;
+  background-color: #000;
+  flex-direction: column;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu a {
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: 300ms all;
+}
+
+.menu a:hover {
+  color: #aaa;
+}
+
+.menu a svg path {
+  stroke: #fff;
+}
+
+.menu a.active,
+.menu a.active svg path {
+  color: #50d6e5;
+  stroke: #50d6e5;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.zoom-container {
+  position: relative;
+  height: calc(100% - 60px);
+  overflow: hidden;
+}
+
+.zoom-container > div:first-child {
+  height: 100%;
+}
+
+.zoom-reset {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+.zoom-reset button {
+  all: unset;
+  background-color: #222;
+  color: #fff;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.zoom-actions {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  flex-direction: column;
+  background-color: #222;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  width: 50px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+.zoom-actions button {
+  all: unset;
+  color: #fff;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.zoom-actions button:first-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.zoom-container,
+.zoom-container .container {
+  background-color: var(--zoom-color);
+}
+.zoom-container img {
+  mix-blend-mode: multiply;
+}
+
+.zoom-header {
+  height: 60px;
+  flex-shrink: 0;
+  background-color: #000;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 0 20px;
+}
+.zoom-header h3 {
+  margin-bottom: 0;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+}
+.zoom-header nav {
+  display: flex;
+  align-items: center;
+  gap: 0 10px;
+}
+.zoom-header nav .colorpicker {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+.zoom-header nav .colorpicker input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.zoom-header nav .colorpicker span {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-color: var(--zoom-color);
+}
+
+.room-select {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.room-select button,
+.room-select button:hover {
+  all: unset;
+}
+.room-select button:first-child {
+  height: 40px;
+  background-color: #282828;
+  padding: 0 20px;
+  border-radius: 4px 0 0 4px;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+}
+.room-select button:last-child {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #282828;
+  padding-right: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.room-dropdown.ant-dropdown-menu {
+  background: #222 !important;
+  width: 150px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.room-dropdown.ant-dropdown-menu li {
+  color: #fff;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.room-dropdown.ant-dropdown-menu li:hover {
+  background-color: #333;
+}
