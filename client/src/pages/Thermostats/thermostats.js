@@ -139,7 +139,7 @@ const floor1 = [
     id: '18',
     text: 'Collaboration-2',
     position: {
-      x: '8.1%',
+      x: '5.8%',
       y: '82%',
     },
   },
@@ -147,7 +147,7 @@ const floor1 = [
     id: '19',
     text: 'Collaboration-1',
     position: {
-      x: '20.4%',
+      x: '19.4%',
       y: '82%',
     },
   },
