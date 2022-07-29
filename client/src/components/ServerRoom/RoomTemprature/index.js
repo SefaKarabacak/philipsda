@@ -10,7 +10,7 @@ function RoomTemprature({ roomTemprature, coolingStatus }) {
           <Title order={2}>{roomTemprature} °C</Title>
         </>
       )}
-      {(coolingStatus === 0 || coolingStatus === 1) && (
+      {(coolingStatus === 2 || coolingStatus === 1) && (
         <Badge
           style={{ with: 'fix-content' }}
           size="sm"

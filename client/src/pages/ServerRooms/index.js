@@ -17,14 +17,14 @@ function Thermostats({ onlyServerRooms }) {
   const [isVisibleMainThermostatModal, setIsVisibleThermostatModal] = useState(false);
 
   useEffect(() => {
-    subscribe(`L${floor}/F/RT/#`);
+    subscribe(`L${floor}/S/RT/#`);
 
     onMessage((message) => {
       console.log('message', message);
       setServiceData((m) => ({ ...m, ...message }));
     });
 
-    return () => unsubscribe(`L${floor}/F/RT/#`);
+    return () => unsubscribe(`L${floor}/S/RT/#`);
   }, [floor]);
 
   const showModal = useCallback((thermostat_id, isMain) => {
@@ -56,8 +56,8 @@ function Thermostats({ onlyServerRooms }) {
           <FloorPlanImage />
 
           {thermostatList.map((item, i) => {
-            const roomTemprature = serviceData.hasOwnProperty(`L${floor}_F_${item.id}_RT_R`)
-              ? serviceData[`L${floor}_F_${item.id}_RT_R`] / 50
+            const roomTemprature = serviceData.hasOwnProperty(`L${floor}_S_${item.id}_RT_R`)
+              ? serviceData[`L${floor}_S_${item.id}_RT_R`] / 10
               : null;
               
             const tColor = tempColors[Math.ceil(roomTemprature - 16)];

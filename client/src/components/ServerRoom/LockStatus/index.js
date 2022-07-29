@@ -4,10 +4,7 @@ import { publish } from '../../../mqtt-service';
 
 const situations = [
   'Unlocked',
-  'Buttons are locked (+ / -)',
-  'Only fan buttons are locked',
-  'Only operating button locked',
-  'All buttons are locked',
+  'Buttons are locked',
 ];
 
 function LockStatus({ id, lockData, value, publish_prefix }) {
@@ -40,10 +37,7 @@ function LockStatus({ id, lockData, value, publish_prefix }) {
           value={value?.toString()}
           data={[
             { value: '0', label: 'Unlock' },
-            { value: '1', label: 'Lock buttons (+ / -)' },
-            { value: '2', label: 'Lock fan button only' },
-            { value: '3', label: 'Lock operating button only' },
-            { value: '4', label: 'Lock all buttons' },
+            { value: '1', label: 'Lock on/off buttons' },
           ]}
         />
       </div>

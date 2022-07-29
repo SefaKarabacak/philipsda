@@ -18,29 +18,22 @@ const publishData = (floor, id, values) => {
   // power status
   const powerValue = values.power ? 1 : 4;
   publish(
-    `L${floor}/F/ON/${id}`,
-    `{"L${floor}_F_${id}_ON_WR": ${powerValue},"L${floor}_F_${id}_ON_R": ${powerValue}}`,
+    `L${floor}/S/ON/${id}`,
+    `{"L${floor}_S_${id}_ON_WR": ${powerValue},"L${floor}_S_${id}_ON_R": ${powerValue}}`,
   );
 
   // set temperature
-  const setTempValue = Number(values.setTemperature) * 50;
+  const setTempValue = Number(values.setTemperature) * 10;
   publish(
-    `L${floor}/F/SET/${id}`,
-    `{"L${floor}_F_${id}_SET_WR": ${setTempValue},"L${floor}_F_${id}_SET_R": ${setTempValue}}`,
-  );
-
-  // fan speed
-  const fanSpeed = values.fanSpeed;
-  publish(
-    `L${floor}/F/FS/${id}`,
-    `{"L${floor}_F_${id}_FS_WR": ${fanSpeed},"L${floor}_F_${id}_FS_R": ${fanSpeed}}`,
+    `L${floor}/S/SET/${id}`,
+    `{"L${floor}_S_${id}_SET_WR": ${setTempValue},"L${floor}_S_${id}_SET_R": ${setTempValue}}`,
   );
 
   // lock status
   const lockValue = values.lockStatus;
   publish(
-    `L${floor}/F/LOCK/${id}`,
-    `{"L${floor}_F_${id}_LOCK_WR": ${lockValue},"L${floor}_F_${id}_LOCK_R": ${lockValue}}`,
+    `L${floor}/S/LOCK/${id}`,
+    `{"L${floor}_S_${id}_LOCK_WR": ${lockValue},"L${floor}_S_${id}_LOCK_R": ${lockValue}}`,
   );
 };
 

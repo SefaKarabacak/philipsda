@@ -17,9 +17,8 @@ function ThermostatModal({ isModalVisible, closeModal, thermostat_id, thermostat
   const [serviceData, setServiceData] = useState({});
 
   useEffect(() => {
-    subscribe(`L${floor}/F/+/${thermostat_id}`);
+    subscribe(`L${floor}/S/+/${thermostat_id}`);
     subscribe(`L${floor}/HZ/F/ON`);
-    subscribe(`L${floor}/S/+/${thermostat_id}`)
 
     onMessage((message) => {
       console.log('NewMessage:ThermostatModal', message);
@@ -27,21 +26,18 @@ function ThermostatModal({ isModalVisible, closeModal, thermostat_id, thermostat
     });
 
     return () => {
-      unsubscribe(`L${floor}/F/+/${thermostat_id}`);
+      unsubscribe(`L${floor}/S/+/${thermostat_id}`);
       unsubscribe(`L${floor}/HZ/F/ON`);
-      unsubscribe(`L${floor}/S/+/${thermostat_id}`)
     };
   }, [thermostat_id, floor]);
 
   const {
     settedTemperature,
-    fanSpeed,
     powerStatus,
     powerStatusIsChangeable,
     roomTemprature,
     coolingStatus,
     lockData,
-    AirTemprature,
   } = useMemo(() => {
     return getData(thermostat_id, serviceData, floor);
   }, [thermostat_id, serviceData, floor]);
@@ -60,7 +56,7 @@ function ThermostatModal({ isModalVisible, closeModal, thermostat_id, thermostat
             id={thermostat_id}
             powerStatusIsChangeable={!powerStatusIsChangeable}
             powerStatus={powerStatus}
-            publish_prefix={`L${floor}/F`}
+            publish_prefix={`L${floor}/S`}
             thermostat={thermostat}
           />
         </div>
@@ -68,14 +64,14 @@ function ThermostatModal({ isModalVisible, closeModal, thermostat_id, thermostat
         <CircularTempSlider
           id={thermostat_id}
           settedTemperature={settedTemperature}
-          publish_prefix={`L${floor}/F`}
+          publish_prefix={`L${floor}/S`}
         />
 
         <LockStatus
           lockData={lockData}
           id={thermostat_id}
-          publish_prefix={`L${floor}/F`}
-          value={serviceData[`L${floor}_F_${thermostat_id}_LOCK_R`]}
+          publish_prefix={`L${floor}/S`}
+          value={serviceData[`L${floor}_S_${thermostat_id}_LOCK_R`]}
         />
 
         <div className='air_temp_container'>
@@ -103,18 +99,17 @@ function ThermostatModal({ isModalVisible, closeModal, thermostat_id, thermostat
 }
 
 const getData = (thermostat_id, serviceData, floor) => {
-  const roomTempratureKey = `L${floor}_F_${thermostat_id}_RT_R`;
-  const coolingStatusKey = `L${floor}_F_${thermostat_id}_MODE_R`;
-  const powerStatusKey = `L${floor}_F_${thermostat_id}_ON_R`;
+  const roomTempratureKey = `L${floor}_S_${thermostat_id}_RT_R`;
+  const coolingStatusKey = `L${floor}_S_${thermostat_id}_MODE_R`;
+  const powerStatusKey = `L${floor}_S_${thermostat_id}_ON_R`;
   const powerStatusIsChangeableKey = `L${floor}_HZ_F_ON`;
-  const fanSpeedKey = `L${floor}_F_${thermostat_id}_FS_R`;
-  const tempratureSetKey = `L${floor}_F_${thermostat_id}_SET_R`;
-  const lockStatusKey = `L${floor}_F_${thermostat_id}_LOCK_R`;
-  const airTempratureKey = `L${floor}_F_${thermostat_id}_T1_R`;
+  const fanSpeedKey = `L${floor}_S_${thermostat_id}_FS_R`;
+  const tempratureSetKey = `L${floor}_S_${thermostat_id}_SET_R`;
+  const lockStatusKey = `L${floor}_S_${thermostat_id}_LOCK_R`;
 //L1_S_01_T1_R
 
   const roomTemprature = serviceData.hasOwnProperty(roomTempratureKey)
-    ? serviceData[roomTempratureKey] / 50
+    ? serviceData[roomTempratureKey] / 10
     : null;
 
   const powerStatus = serviceData.hasOwnProperty(powerStatusKey)
@@ -132,7 +127,7 @@ const getData = (thermostat_id, serviceData, floor) => {
   const fanSpeed = serviceData.hasOwnProperty(fanSpeedKey) ? serviceData[fanSpeedKey] : null;
 
   const settedTemperature = serviceData.hasOwnProperty(tempratureSetKey)
-    ? serviceData[tempratureSetKey] / 50
+    ? serviceData[tempratureSetKey] / 10
     : null;
 
   const lockData = serviceData.hasOwnProperty(lockStatusKey) ? serviceData[lockStatusKey] : null;
