@@ -1,11 +1,11 @@
 const floor1 = [
   {
     id: '01',
-    text: 'CLIMATEMASTER',
+    text: 'CLIMATE',
     ignoreBatch: true,
     isServerRoom: true,
     position: {
-      x: '31%',
+      x: '29%',
       y: '57%',
     },
   },
@@ -15,8 +15,8 @@ const floor1 = [
     ignoreBatch: true,
     isServerRoom: true,
     position: {
-      x: '34%',
-      y: '74%',
+      x: '29%',
+      y: '72%',
     },
   },
 ];

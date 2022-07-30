@@ -60,7 +60,7 @@ function Alarm() {
               return (
                 <div key={i}>
                   <strong>
-                    Floor {text[0][1]}, {text[2] === '01' ? 'Electrical Room' : 'Server Room'}
+                    Floor {text[0][1]}, {text[2] === '01' ? 'Water Leaks 1' : 'Water Leaks 2'}
                   </strong>
                 </div>
               );

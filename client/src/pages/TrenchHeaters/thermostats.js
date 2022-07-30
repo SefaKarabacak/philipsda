@@ -12,6 +12,8 @@ const floor1 = [
   {
     id: '52',
     text: 'Trench-2',
+    ignoreBatch: true,
+    isServerRoom: true,
     position: {
       x: '32%',
       y: '71%',
