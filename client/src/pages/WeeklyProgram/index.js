@@ -16,7 +16,7 @@ function WeeklyProgram() {
         <Program
           topic_prefix={`L${floor}/HZ/K`}
           payload_prefix={`L${floor}_HZ_K`}
-          title="Selenoid Valve"
+          title="Trench Heaters"
         />
       </div>
     </>
